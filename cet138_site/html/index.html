@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>HTML Demo</title>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+<header class="container header">
+  <h1>HTML — Semantics, Forms, Tables</h1>
+</header>
+
+<main class="container">
+  <article class="card">
+    <h2>Semantic Structure</h2>
+    <p>This page uses semantic landmarks: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>.</p>
+    <nav class="nav" aria-label="inline navigation">
+      <a href="#form">Form</a>
+      <a href="#table">Table</a>
+      <a href="../index.html">Home</a>
+    </nav>
+  </article>
+
+  <section id="form" class="card">
+    <h2>Accessible Form</h2>
+    <form>
+      <div class="form-control">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required placeholder="Your name"/>
+      </div>
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com"/>
+      </div>
+      <div class="form-control">
+        <label for="role">Role</label>
+        <select id="role" name="role" required>
+          <option value="">Select…</option>
+          <option>Student</option>
+          <option>Developer</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label>Subscribe</label>
+        <label><input type="radio" name="sub" value="yes" required/> Yes</label>
+        <label><input type="radio" name="sub" value="no"/> No</label>
+      </div>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+    <p class="caption">A Simple Form</p>
+  </section>
+
+  <section id="table" class="card">
+    <h2>Table with Caption &amp; Headers</h2>
+    <table class="table">
+      <caption class="caption">Student modules (example)</caption>
+      <thead>
+        <tr><th scope="col">Code</th><th scope="col">Module</th><th scope="col">Credits</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">CET138</th><td>Full Stack Development</td><td>20</td></tr>
+        <tr><th scope="row">CET140</th><td>Specialist Project</td><td>20</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer class="container">© HTML demo</footer>
+</body>
+</html>
