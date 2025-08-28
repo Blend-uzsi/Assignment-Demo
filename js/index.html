@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>JavaScript Demo</title>
+
+  <link rel="stylesheet" href="../assets/styles.css"/>
+
+  <style>
+    /* page-local layout only */
+    .row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 900px) { .row { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="container header">
+    <h1>JavaScript — DOM, Events, “Fetch”</h1>
+  </header>
+
+  <main class="container row">
+    <section class="card">
+      <h2>DOM &amp; Events</h2>
+      <button id="addItem" class="btn">Add item</button>
+      <button id="toggleTheme" class="btn" style="margin-left:8px">Toggle theme</button>
+      <ul id="items" class="card" style="margin-top:12px"></ul>
+      <p class="caption">Try adding items and toggling the theme.</p>
+    </section>
+
+    <section class="card">
+      <h2>Fetch (simulated)</h2>
+      <button id="load" class="btn">Load products</button>
+      <pre id="out"></pre>
+      <p class="caption">Works offline by simulating a server response.</p>
+    </section>
+
+    <section class="card" style="grid-column:1/-1">
+      <h2>Snippet</h2>
+<pre><code>// Minimal event handling
+document.getElementById("addItem").addEventListener("click", () => {
+  items.push("Item " + (items.length+1));
+  render();
+});
+
+// Fake fetch returns a Promise like window.fetch
+function fakeFetch(){
+  return new Promise(res => setTimeout(() => res([
+    { id: 1, name: "Pen" }, { id: 2, name: "Pad" }, { id: 3, name: "Paper" }
+  ]), 500));
+}</code></pre>
+    </section>
+  </main>
+
+  <footer class="container">© JS demo</footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
